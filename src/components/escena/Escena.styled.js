@@ -9,6 +9,7 @@ export const Escena = styled.p`
     text-align: center;
     margin-left: 1rem;
     margin-right: 1rem;
+    background-color: #fff;
     transition: all 0.2s ease-in-out;
 
     &.selected {
