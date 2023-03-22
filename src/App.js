@@ -2,11 +2,12 @@
 // import './App.css';
 
 import Escena from './components/escena/Escena';
+import history from './history.json';
 
 function App() {
   return (
     <div className="App">
-      <Escena text="El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial" />
+      {history.map(sentence => <Escena text={sentence}/>)}
     </div>
   );
 }

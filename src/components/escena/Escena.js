@@ -1,7 +1,7 @@
 
 const Escena = (props) => (
-    <div>
+    <p>
         {props.text}
-    </div>
+    </p>
 )
 export default Escena;
