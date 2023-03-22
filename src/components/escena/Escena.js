@@ -1,7 +1,7 @@
 import { Escena } from './Escena.styled';
 
 const MyEscena = (props) => (
-    <Escena>
+    <Escena className={props.className}>
         {props.text}
     </Escena>
 )
