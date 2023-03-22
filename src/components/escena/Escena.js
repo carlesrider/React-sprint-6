@@ -1,7 +1,8 @@
+import { Escena } from './Escena.styled';
 
-const Escena = (props) => (
-    <p>
+const MyEscena = (props) => (
+    <Escena>
         {props.text}
-    </p>
+    </Escena>
 )
-export default Escena;
+export default MyEscena;
