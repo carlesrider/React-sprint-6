@@ -2,7 +2,7 @@
 // import './App.css';
 import { useState } from 'react';
 import Button from './components/Button/Button';
-import Escena from './components/Escena/Escena';
+import Escena from './components/escena/Escena';
 import Welcome from './components/Welcome/Welcome';
 import history from './history.json';
 
