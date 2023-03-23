@@ -1,8 +1,11 @@
 import { Escena } from './Escena.styled';
 
 const MyEscena = (props) => (
-    <Escena className={props.className}>
-        {props.text}
+    <Escena>
+        <img className={'background ' + props.className} src={props.src} alt=""/>
+        <p className={props.className}>
+            {props.text}
+        </p>
     </Escena>
 )
 export default MyEscena;

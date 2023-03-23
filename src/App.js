@@ -10,15 +10,25 @@ import history from './history.json';
 function App() {
   const [index, setIndex] = useState(0);
   const [welcome, setWelcome] = useState(true);
+  const [prevDisabled, setprevDisabled] = useState(true);
+  const [nextDisabled, setnextDisabled] = useState(false);
 
   const next = () => {
     if (index < 3) {
+      setprevDisabled(false)
       setIndex(index + 1);
+    }
+    if (index === 2) {
+      setnextDisabled(true)
     }
   }
   const prev = () => {
     if (index > 0) {
+      setnextDisabled(false)
       setIndex(index - 1);
+    }
+    if (index === 1) {
+      setprevDisabled(true)
     }
   }
   const toggleWelcome = () => {
@@ -30,9 +40,13 @@ function App() {
       { welcome ? <Welcome text="Una història increïble" onClick={toggleWelcome} buttonText="Comença!" />
       : 
       <div>
-        <Button onClick={prev} text="Anterior" />
-        <Button onClick={next} text="Següent" />        
-        {history.map((sentence, key) => <Escena key={key} text={sentence} className={(index === key) ? "selected" : ""} />)}
+        <Button onClick={prev} text="Anterior" disabled={prevDisabled} />
+        <Button onClick={next} text="Següent" disabled={nextDisabled}/>        
+        {history.map((sentence, key) => 
+        <div key={key} >
+          <Escena text={sentence.text} className={(index === key) ? "selected" : ""} src={sentence.img}/>
+        </div>
+        )}
       </div>
       }
       
